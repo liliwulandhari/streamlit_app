@@ -1,6 +1,7 @@
 import streamlit as st
 import joblib
 import numpy as np
+import pandas as pd
 
 # Load the machine learning model
 model = joblib.load('RF_class.pkl')
@@ -9,7 +10,7 @@ def main():
     st.title('Machine Learning Model Deployment')
 
     # Add user input components for 5 features
-    sepal_length = st.slider('sepal_length', min_value=0.0, max_value=10.0, value=0.1)
+    sepal_length = st.number_input('input nilai sepal_length', min_value=0.0, max_value=10.0, value=0.1)
     sepal_width = st.slider('sepal_width', min_value=0.0, max_value=10.0, value=0.1)
     patal_length = st.slider('patal_length', min_value=0.0, max_value=10.0, value=0.1)
     patal_width = st.slider('patal_width', min_value=0.0, max_value=10.0, value=0.1)
